@@ -16,6 +16,6 @@ func main() {
 		http.Redirect(w, r, "https://www.google.com", http.StatusMovedPermanently)
 	})
 
-	// Khởi động server
-	http.ListenAndServe(":8080", nil)
+	
+	
 }
