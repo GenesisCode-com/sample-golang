@@ -34,6 +34,11 @@ func logRequest(r *http.Request) {
 }
 
 func main() {
+	http.HandleFunc("/trk", func(w http.ResponseWriter, r *http.Request) {
+		// Chuyển hướng người dùng sang trang web của Google
+		http.Redirect(w, r, "https://www.google.com", http.StatusMovedPermanently)
+	})
+	
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		logRequest(r)
 		fmt.Fprintf(w, "Hello! you've requested %s\n", r.URL.Path)
